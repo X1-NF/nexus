@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نيكسوس للتقنية | Nexus Tech Store</title>
+    <link rel="stylesheet" href="nexus.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="google-site-verification" content="8li1_9mlhlKz3ei8jhDTP_Vdi_aNVMaTcAXIKjJJ4pc" />
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><i class="fas fa-microchip"></i> نيكسوس للتقنية</a>
+            </div>
+            <div class="search-container">
+                <input type="text" id="product-search" placeholder="ابحث عن منتج..." onkeyup="filterProducts()">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="nav-icons">
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="sub-nav">
+        <div class="container">
+            <ul id="dynamic-nav"></ul>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="reveal">مستقبل التقنية، اليوم</h1>
+                <p class="reveal">استكشف أحدث ابتكارات عام 2026 بأسعار تنافسية وضمان محلي.</p>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main id="product-sections"></main>
+    </div>
+
+    <!-- Sidebar Cart -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2><i class="fas fa-shopping-basket"></i> سلة التسوق</h2>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div id="cart-items">
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>المجموع الفرعي:</span>
+                <span><span id="subtotal-price">0</span> ريال</span>
+            </div>
+            <div class="cart-total-row">
+                <span>الضريبة (15%):</span>
+                <span><span id="tax-price">0</span> ريال</span>
+            </div>
+            <div class="cart-total-row total-main">
+                <span>الإجمالي النهائي:</span>
+                <span><span id="total-price">0</span> ريال</span>
+            </div>
+            <button class="btn-checkout" onclick="goToCheckout()">إتمام عملية الشراء</button>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="success-overlay"></div>
+    <div class="success-popup" id="success-popup">
+        <i class="fas fa-check-circle"></i>
+        <h2>تم تأكيد طلبك بنجاح!</h2>
+        <p>شكراً لثقتك بنا. رقم طلبك هو: <strong id="order-id">#NX-8821</strong></p>
+        <button class="btn-checkout" onclick="closeSuccess()">العودة للمتجر</button>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>نيكسوس للتقنية</h3>
+                    <p>وجهتكم الأولى لأحدث الأجهزة والقطع التقنية في المنطقة.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> ya7.a7.ya7@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> 0574770280</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>الفئات</h3>
+                    <ul id="footer-links"></ul>
+                </div>
+                <div class="footer-section">
+                    <h3>تابعنا</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nexus Tech Store. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="nexus.js"></script>
+</body>
+</html>
